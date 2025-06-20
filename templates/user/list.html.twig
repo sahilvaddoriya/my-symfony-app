@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User List{% endblock %}
+
+{% block body %}
+    <h1>All Users</h1>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Contact Number</th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.contactNo }}</td>
+            </tr>
+        {% else %}
+            <tr><td colspan="4">No users found.</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
